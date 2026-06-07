@@ -12,7 +12,7 @@ jobs:
         run: echo "foo = value" >> $GITHUB_ENV
 
       - name: Echo the environment variable "foo" from previous step
-        run: echo "Hello, $GITHUB_ENV"
+        run: echo "Hello, $foo"
 
       - name: Mask the "api_key" within this steps's environment variable and echo it
         env:
@@ -33,7 +33,7 @@ jobs:
         run: echo "LUCKY_NUMBER=123456" >> $GITHUB_OUTPUT
 
       - name: Echo the output set in the previous step
-        run: echo "My lucky number is $GITHUB_OUTPUT"
+        run: echo "My lucky number is $LUCKY_NUMBER"
 
       - name: Create a Job Summary as "Exploring Workflow Commands :thumbsup:"
         run: echo "Exploring Workflow Commands :thumbsup:" >> $GITHUB_STEP_SUMMARY
